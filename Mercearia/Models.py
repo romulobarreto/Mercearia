@@ -31,7 +31,9 @@ class Fornecedor:
         self.categoria = categoria
 
 class Pessoa:
-    def __init__(self, nome, telefone, cpf, email, endereco, nascimento = datetime):
+    def __init__(self, nome, telefone, cpf, email, endereco, nascimento):
+        if not isinstance(nascimento, datetime):
+            raise ValueError("O campo 'nascimento' deve ser uma data do tipo datetime.")
         self.nome = nome
         self.telefone = telefone
         self.cpf = cpf
@@ -40,6 +42,6 @@ class Pessoa:
         self.nascimento = nascimento
 
 class Funcionario(Pessoa):
-    def __init__(self, matricula, nome, telefone, cpf, email, endereco, nascimento = datetime):
+    def __init__(self, matricula, nome, telefone, cpf, email, endereco, nascimento):
      self.matricula = matricula
      super(Funcionario, self). __init__(nome, telefone, cpf, email, endereco, nascimento)
