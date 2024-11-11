@@ -16,7 +16,7 @@ class Estoque:
         self.quantidade = quantidade
 
 class Venda:
-    def __init__(self, ItensVendidos: Produtos, vendedor, comprador, QuantVendida, data = datetime.now()):
+    def __init__(self, ItensVendidos: Produtos, vendedor, comprador, QuantVendida, data = datetime.now().strftime("/%d/%m/%Y")):
         self.ItensVendidos = ItensVendidos
         self.vendedor = vendedor
         self.comprador = comprador
